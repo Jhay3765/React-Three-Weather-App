@@ -61,7 +61,7 @@ function SkyParticles() {
 
 export default function LightBackground() {
   return (
-    <div className="absolute inset-0 -z-20">
+    <div className="fixed h-screen inset-0 -z-20">
       <Canvas camera={{ position: [0, 0, 600] }}>
         {/* 🌇 Afternoon sky tone — softer, warmer blue */}
         <color attach="background" args={["#1e3a8a"]} />

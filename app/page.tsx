@@ -185,6 +185,16 @@ export default function Page() {
       )}
       {err && <p className="text-center text-red-300 mt-4">Error: {err}</p>}
 
+      <BottomNavigationBar
+        temp={Math.round(data?.current?.temp_f ?? 0)}
+        condition={data?.current?.condition.text ?? ""}
+        hi={threeDays[0]?.hi}
+        lo={threeDays[0]?.lo}
+        humidity={data?.current?.humidity}
+        windMph={data?.current?.wind_mph}
+        feelsLike={Math.round(data?.current?.feelslike_f ?? 0)}
+        visibilityMi={data?.current?.vis_miles}
+      />
       <ul className="flex flex-col md:flex-row max-w-7xl justify-center mx-auto gap-4 mt-4">
         {threeDays.length > 0 ? (
           threeDays.map((d, i) => (
@@ -205,17 +215,6 @@ export default function Page() {
       <h2 className="text-3xl mt-4 text-center uppercase tracking-wider">
         THREE Day Forecast
       </h2>
-
-      <BottomNavigationBar
-        temp={Math.round(data?.current?.temp_f ?? 0)}
-        condition={data?.current?.condition.text ?? ""}
-        hi={threeDays[0]?.hi}
-        lo={threeDays[0]?.lo}
-        humidity={data?.current?.humidity}
-        windMph={data?.current?.wind_mph}
-        feelsLike={Math.round(data?.current?.feelslike_f ?? 0)}
-        visibilityMi={data?.current?.vis_miles}
-      />
     </div>
   );
 }

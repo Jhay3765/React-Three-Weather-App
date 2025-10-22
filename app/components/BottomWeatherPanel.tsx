@@ -20,7 +20,7 @@ export default function BottomWeatherPanel({
   visibilityMi?: number;
 }) {
   return (
-    <div className="fixed bottom-0 left-0 px-4 sm:px-8 py-8 w-full flex flex-col sm:flex-row justify-between items-start sm:items-end  text-white z-50">
+    <div className="lg:fixed mt-24 lg:mt-0 bottom-0 left-0 px-4 sm:px-8 py-8 w-full flex flex-col sm:flex-row justify-between items-start sm:items-end  text-white z-50">
       {/* === Left Section: Temp & Condition === */}
       <section className="flex gap-3 items-end">
         <div className="text-5xl sm:text-7xl font-light">{temp ?? "--"}</div>
