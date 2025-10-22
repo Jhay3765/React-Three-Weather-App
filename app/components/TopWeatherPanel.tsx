@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchSvg from "./SearchSvg";
 
 export const TopWeatherPanel = ({
   name,
@@ -14,9 +15,9 @@ export const TopWeatherPanel = ({
   const [val, setVal] = useState("");
 
   return (
-    <section className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 sm:gap-6 px-4 sm:px-0">
+    <section className="flex sm:flex-row justify-between items-center w-full gap-4 sm:gap-6 sm:px-0">
       {/* === Location Info === */}
-      <div className="leading-tight text-center sm:text-left">
+      <div className="leading-tight  sm:text-left">
         <p className="font-semibold text-lg sm:text-xl">{name}</p>
         <p className="text-sm sm:text-base opacity-90">{region}</p>
         {updatedAt && (
@@ -25,7 +26,10 @@ export const TopWeatherPanel = ({
       </div>
 
       {/* === Search Field === */}
-      <div className="flex w-full sm:w-auto justify-center sm:justify-end flex-wrap sm:flex-nowrap gap-2">
+      <div className="xl:hidden bg-white/10 p-2 rounded-full text-white">
+        <SearchSvg />
+      </div>
+      <div className="xl:flex hidden w-full sm:w-auto justify-center sm:justify-end flex-wrap sm:flex-nowrap gap-2">
         <input
           type="text"
           className="w-full sm:w-72 px-4 py-2 border border-white/30 rounded-full bg-white/10 placeholder-white/70 text-sm focus:outline-none text-center sm:text-left"

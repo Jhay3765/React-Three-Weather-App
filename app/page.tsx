@@ -164,7 +164,7 @@ export default function Page() {
   }, [data]);
 
   return (
-    <div className="h-screen p-8 text-white">
+    <div className="h-screen p-1 xl:p-8 text-white">
       <LightBackground />
       <TopWeatherPanel
         name={data?.location?.name ?? "Loading..."}
