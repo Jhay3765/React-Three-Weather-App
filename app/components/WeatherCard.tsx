@@ -1,5 +1,5 @@
 import React from "react";
-import { weatherCodes } from "../days";
+import { weatherCodes } from "../utility/CodeToIconMap";
 
 interface Weathercard {
   day: string;

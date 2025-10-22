@@ -3,7 +3,7 @@ import "./globals.css";
 
 import "@fontsource-variable/montserrat";
 export const metadata: Metadata = {
-  title: "Weather App",
+  title: "Weather | ",
   description: "3D weather app created with react-three-fibre.",
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`$ antialiased h-screen`}>{children}</body>
+      <body className={`$ antialiased`}>{children}</body>
     </html>
   );
 }

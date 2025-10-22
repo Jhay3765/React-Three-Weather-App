@@ -1,23 +1,4 @@
-const days = [
-  {
-    day: "Today",
-    hi: "86",
-    lo: "55",
-    weather: "Sunny",
-  },
-  {
-    day: "Monday",
-    hi: "86",
-    lo: "55",
-    weather: "Light Rain",
-  },
-  {
-    day: "Tuesday",
-    hi: "86",
-    lo: "55",
-    weather: "Partly Cloudy",
-  },
-];
+// Combines weather condition codes with corresponding icon paths for day and night.
 
 export const weatherCodes: Record<number, { day: string; night: string }> = {
   1000: {
@@ -213,5 +194,3 @@ export const weatherCodes: Record<number, { day: string; night: string }> = {
     night: "/assets/weatherIcons/thunderstorm-snow.png",
   },
 };
-
-export default days;

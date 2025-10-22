@@ -1,3 +1,4 @@
+// Determines if a given time (in ISO format) falls within the day period defined by sunrise and sunset times in a specific timezone.
 export default function isDayAt(
   timeISO: string,
   sunriseClock: string,
