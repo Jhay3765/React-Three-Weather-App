@@ -164,7 +164,7 @@ export default function Page() {
   }, [data]);
 
   return (
-    <div className="h-screen p-1 xl:p-8 text-white">
+    <div className="h-screen overflow-x-hidden p-1 xl:p-8 text-white">
       <LightBackground />
       <TopWeatherPanel
         name={data?.location?.name ?? "Loading..."}
@@ -197,22 +197,31 @@ export default function Page() {
       />
       <ul className="flex flex-col md:flex-row max-w-7xl justify-center mx-auto gap-4 mt-4">
         {threeDays.length > 0 ? (
-          threeDays.map((d, i) => (
-            <WeatherCard
-              key={i}
-              day={d.day}
-              hi={d.hi}
-              lo={d.lo}
-              code={d.code}
-              weather={d.weather}
-            />
-          ))
+          <>
+            {/* Mobile view: one combined card */}
+            <li className="block md:hidden">
+              <WeatherCard combined days={threeDays} />
+            </li>
+
+            {/* Desktop view: individual cards */}
+            {threeDays.map((d, i) => (
+              <li key={i} className="hidden md:block">
+                <WeatherCard
+                  day={d.day}
+                  hi={d.hi}
+                  lo={d.lo}
+                  code={d.code}
+                  weather={d.weather}
+                />
+              </li>
+            ))}
+          </>
         ) : (
           <div>No Weather Available</div>
         )}
       </ul>
 
-      <h2 className="text-3xl mt-4 text-center uppercase tracking-wider">
+      <h2 className="text-3xl hidden md:block  mt-4 text-center uppercase tracking-wider">
         THREE Day Forecast
       </h2>
     </div>
