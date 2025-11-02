@@ -2,11 +2,12 @@
 
 ## Technology
 
-Made with the help of react-three-fibre
+Made using react. Used weatherapi for the forecast and react-three-fibre to add the 3D models.
 
 ## Getting Started
 
 First, run the development server:
+Make a env local file with WEATHERAPI_KEY and the base url for the weatherapi.
 
 ```bash
 npm run dev
@@ -18,6 +19,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then open [http://localhost:3000](http://localhost:3000)
