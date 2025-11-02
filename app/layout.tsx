@@ -3,8 +3,8 @@ import "./globals.css";
 
 import "@fontsource-variable/montserrat";
 export const metadata: Metadata = {
-  title: "Weather | ",
-  description: "3D weather app created with react-three-fibre.",
+  title: "Weather",
+  description: "3D weather app made with react.",
 };
 
 export default function RootLayout({
