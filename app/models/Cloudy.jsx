@@ -4,7 +4,13 @@ import { useGLTF } from "@react-three/drei";
 const BASE_SCALE = 20;
 
 export function CloudyModel(props) {
-  const { nodes, materials } = useGLTF("/assets/models/Cloudy.glb");
+  const gltf = useGLTF("/assets/models/Cloudy.glb");
+  
+  if (!gltf || !gltf.nodes || !gltf.materials) {
+    return null;
+  }
+  
+  const { nodes, materials } = gltf;
 
   return (
     <group scale={BASE_SCALE} {...props} dispose={null}>

@@ -164,8 +164,8 @@ export default function Page() {
   }, [data]);
 
   return (
-    <div className="h-screen overflow-x-hidden p-1 xl:p-8 text-white">
-      <LightBackground />
+    <div className="h-screen overflow-x-hidden p-1 xl:p-4 text-white">
+      <LightBackground isDay={sceneIsDay} weatherCode={sceneCode} />
       <TopWeatherPanel
         name={data?.location?.name ?? "Loading..."}
         region={data?.location?.region ?? ""}

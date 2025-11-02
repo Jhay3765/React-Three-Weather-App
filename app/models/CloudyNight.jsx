@@ -7,7 +7,14 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function CloudyNightModel(props) {
-  const { nodes, materials } = useGLTF("/assets/models/CloudyNight.glb");
+  const gltf = useGLTF("/assets/models/CloudyNight.glb");
+  
+  if (!gltf || !gltf.nodes || !gltf.materials) {
+    return null;
+  }
+  
+  const { nodes, materials } = gltf;
+  
   return (
     <group scale={40} {...props} dispose={null}>
       <mesh
@@ -22,4 +29,4 @@ export function CloudyNightModel(props) {
   );
 }
 
-useGLTF.preload("/CloudyNight.glb");
+useGLTF.preload("/assets/models/CloudyNight.glb");

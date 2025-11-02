@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import * as THREE from "three";
@@ -69,6 +69,8 @@ function ModelByCode({ code, is_day }: { code: number; is_day: 0 | 1 }) {
     return is_day ? PartlyCloudyModel : NightModel; // Fallback
   }, [code, is_day]);
 
+  if (!Comp) return null;
+
   return <Comp />;
 }
 
@@ -104,11 +106,13 @@ export default function Scene({ code, is_day }: WeatherProps) {
   return (
     <div className="h-[350px] w-[450px]">
       <Canvas>
-        <TiltGroup pointer={pointer}>
-          <Float speed={0.6} rotationIntensity={0.15} floatIntensity={0.08}>
-            <ModelByCode is_day={is_day} code={code} />
-          </Float>
-        </TiltGroup>
+        <Suspense fallback={null}>
+          <TiltGroup pointer={pointer}>
+            <Float speed={0.6} rotationIntensity={0.15} floatIntensity={0.08}>
+              <CloudyModel />
+            </Float>
+          </TiltGroup>
+        </Suspense>
 
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
